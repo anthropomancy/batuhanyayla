@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batuhan Ali Yayla Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">BAY</div>
+  <nav>
+    <button onclick="toggleTheme()">🌙/☀️</button>
+  </nav>
+</header>
+
+<main>
+  <!-- About Me Section -->
+  <section id="about">
+    <h1>Hi, I'm Batuhan Ali Yayla</h1>
+    <p>
+      <strong>Date of Birth:</strong> 27/08/2002 (Age: 22)<br>
+      <strong>Education:</strong> I started at Ege University in Petrochemical Refinery Technologies but switched my full focus to Computer Programming.<br>
+      <strong>Work Experience:</strong> I have worked in various sectors, but the jobs related to computers were the ones I felt most capable at.<br>
+      <strong>Skills:</strong> I've been using computers almost since I was 6 years old, so I can handle everything from programming to hardware.<br>
+      <strong>Projects:</strong> I had never focused on creating projects before, but now I’ve started, and my projects will be added soon.<br>
+      <strong>Interests:</strong> Anything I can do with a computer is my interest. I especially enjoy coding and working with software.
+    </p>
+
+    <div class="skills">
+      <div class="skill">
+        <p>HTML/CSS</p>
+        <div class="bar"><div style="width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="bar"><div style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <p>React</p>
+        <div class="bar"><div style="width: 75%"></div></div>
+      </div>
+      <div class="skill">
+        <p>Node.js</p>
+        <div class="bar"><div style="width: 70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-card">
+        <h3>ToDo List</h3>
+        <p>Manage your tasks efficiently.</p>
+        <a href="ToDoList/index.html" target="_blank">Live Demo</a>
+        <a href="https://github.com/anthropomancy/ToDoList" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini Games</h3>
+        <p>Play three fun web-based games.</p>
+        <a href="MiniGames/index.html" target="_blank">Play</a>
+        <a href="https://github.com/anthropomancy/MiniGames" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/xblknldo" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="form-status"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
