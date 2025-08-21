@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToDoList - BATUHAN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Batuhan Ali Yayla ToDoList</h1>
+  </header>
+
+  <main>
+    <div class="todo-container">
+      <input type="text" id="task-input" placeholder="Add a new task...">
+      <button id="add-task-btn">Add Task</button>
+
+      <ul id="task-list"></ul>
+
+      <!-- Home Butonu -->
+      <button id="home-btn">Go Back to Home</button>
+    </div>
+  </main>
+
+<script src="script.js"></script>
+<script>
+  // Home butonu yönlendirme
+  const homeBtn = document.getElementById('home-btn');
+  homeBtn.addEventListener('click', () => {
+    window.location.href = "../index.html"; // Portföy ana sayfa konumuna göre yolu güncelle
+  });
+</script>
+</body>
+</html>

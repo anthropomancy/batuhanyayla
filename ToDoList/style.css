@@ -1,0 +1,103 @@
+:root {
+  --dark-blue: #1B2A49;
+  --gold: #F4C430;
+  --light-gray: #ECECEC;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
+}
+
+header h1 {
+  font-size:2em;
+  color: var(--dark-blue);
+  margin-bottom:20px;
+}
+
+.todo-container {
+  background-color:#fff;
+  padding:20px;
+  border-radius:10px;
+  max-width:400px;
+  width:100%;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+#task-input {
+  width: 70%;
+  padding:10px;
+  border:2px solid var(--dark-blue);
+  border-radius:6px;
+  margin-right:10px;
+  font-size:1em;
+}
+
+#add-task-btn {
+  padding:10px 15px;
+  border:none;
+  background-color:var(--gold);
+  color: var(--dark-blue);
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s all;
+}
+
+#add-task-btn:hover {
+  box-shadow:0 0 10px var(--gold);
+}
+
+#task-list {
+  list-style-type:none;
+  margin-top:20px;
+}
+
+#task-list li {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  border-bottom:1px solid var(--light-gray);
+  transition:0.3s all;
+}
+
+#task-list li.completed {
+  text-decoration:line-through;
+  color:gray;
+}
+
+.delete-btn {
+  background-color:red;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+#home-btn {
+  margin-top:20px;
+  padding:10px 15px;
+  border:none;
+  background-color: var(--dark-blue);
+  color: var(--gold);
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s all;
+}
+
+#home-btn:hover {
+  background-color: var(--gold);
+  color: var(--dark-blue);
+  box-shadow: 0 0 10px var(--gold);
+}
+
