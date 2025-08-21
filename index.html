@@ -4,6 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Batuhan Ali Yayla Portfolio</title>
+
+<!-- SEO -->
+<meta name="description" content="Batuhan Ali Yayla's Portfolio, it can be used for my Indeed & LinkedIn profiles.">
+<meta name="keywords" content="Batuhan Ali Yayla, Full Stack Developer, Portfolio, ToDo List, Mini Games, Programming">
+<meta name="author" content="Batuhan Ali Yayla">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Batuhan Ali Yayla Portfolio">
+<meta property="og:description" content="Full Stack Developer Portfolio showcasing projects and skills.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anthropomancy.github.io/batuhanyayla/">
+<meta property="og:image" content="photoandvideo/fotoğraf.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batuhan Ali Yayla Portfolio">
+<meta name="twitter:description" content="Full Stack Developer Portfolio showcasing projects and skills.">
+<meta name="twitter:image" content="photoandvideo/fotoğraf.jpg">
+
+<link rel="icon" href="photoandvideo/favicon.png" type="image/png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,14 +37,27 @@
 <main>
   <!-- About Me Section -->
   <section id="about">
-    <h1>Hi, I'm Batuhan Ali Yayla</h1>
-    <p>
+    <div class="about-language-toggle">
+      <button onclick="showEnglish()">English</button>
+      <button onclick="showTurkish()">Türkçe</button>
+    </div>
+
+    <p id="about-en">
       <strong>Date of Birth:</strong> 27/08/2002 (Age: 22)<br>
       <strong>Education:</strong> I started at Ege University in Petrochemical Refinery Technologies but switched my full focus to Computer Programming.<br>
       <strong>Work Experience:</strong> I have worked in various sectors, but the jobs related to computers were the ones I felt most capable at.<br>
       <strong>Skills:</strong> I've been using computers almost since I was 6 years old, so I can handle everything from programming to hardware.<br>
       <strong>Projects:</strong> I had never focused on creating projects before, but now I’ve started, and my projects will be added soon.<br>
       <strong>Interests:</strong> Anything I can do with a computer is my interest. I especially enjoy coding and working with software.
+    </p>
+
+    <p id="about-tr" style="display:none;">
+      <strong>Doğum Tarihi:</strong> 27/08/2002 (Yaş: 22)<br>
+      <strong>Eğitim:</strong> Ege Üniversitesi Petro Kimya Rafineri Teknolojileri bölümüne başladım ama tüm odağımı Bilgisayar Programcılığı bölümüne çevirdim.<br>
+      <strong>İş Deneyimi:</strong> Çeşitli sektörlerde çalıştım, ama bilgisayar ile ilgili işler bana en uygun olanlardı.<br>
+      <strong>Beceriler:</strong> Neredeyse 6 yaşımdan beri bilgisayar kullanıyorum, programlamadan donanıma kadar her şeyi yapabilirim.<br>
+      <strong>Projeler:</strong> Daha önce proje odaklı çalışmadım ama şimdi başladım, projelerim yakında eklenecek.<br>
+      <strong>İlgi Alanları:</strong> Bilgisayar ile yapabileceğim her şey ilgimi çekiyor. Kodlama ve yazılımlarla uğraşmayı seviyorum.
     </p>
 
     <div class="skills">
@@ -52,6 +85,7 @@
     <h2>Projects</h2>
     <div class="project-container">
       <div class="project-card">
+        <img src="ToDoList/preview.png" alt="ToDo List Preview">
         <h3>ToDo List</h3>
         <p>Manage your tasks efficiently.</p>
         <a href="ToDoList/index.html" target="_blank">Live Demo</a>
@@ -59,6 +93,7 @@
       </div>
 
       <div class="project-card">
+        <img src="MiniGames/preview.png" alt="Mini Games Preview">
         <h3>Mini Games</h3>
         <p>Play three fun web-based games.</p>
         <a href="MiniGames/index.html" target="_blank">Play</a>
@@ -81,5 +116,15 @@
 </main>
 
 <script src="script.js"></script>
+<script>
+function showEnglish(){
+  document.getElementById('about-en').style.display='block';
+  document.getElementById('about-tr').style.display='none';
+}
+function showTurkish(){
+  document.getElementById('about-en').style.display='none';
+  document.getElementById('about-tr').style.display='block';
+}
+</script>
 </body>
 </html>
