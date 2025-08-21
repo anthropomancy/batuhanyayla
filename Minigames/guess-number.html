@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess the Number</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Guess the Number</h1>
+</header>
+
+<main>
+  <p>Guess a number between 1 and 100</p>
+  <input type="number" id="guess-input" min="1" max="100">
+  <button id="guess-btn">Guess</button>
+  <p id="feedback"></p>
+  <button onclick="window.location.href='index.html'">Back to Mini Games</button>
+</main>
+
+<script>
+let numberToGuess = Math.floor(Math.random()*100)+1;
+let feedback = document.getElementById('feedback');
+let guessInput = document.getElementById('guess-input');
+let guessBtn = document.getElementById('guess-btn');
+
+guessBtn.addEventListener('click', ()=>{
+  let guess = Number(guessInput.value);
+  if(guess === numberToGuess){
+    feedback.textContent = `Correct! The number was ${numberToGuess}.`;
+    numberToGuess = Math.floor(Math.random()*100)+1; // reset game
+  }else if(guess < numberToGuess){
+    feedback.textContent = "Too low! Try again.";
+  }else{
+    feedback.textContent = "Too high! Try again.";
+  }
+  guessInput.value = '';
+});
+</script>
+</body>
+</html>

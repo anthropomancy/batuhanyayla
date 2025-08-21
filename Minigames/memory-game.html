@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Game</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+    transition: transform 0.3s;
+  }
+  .card.flipped {
+    background-color: var(--gold);
+    color: var(--dark-blue);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Memory Game</h1>
+</header>
+
+<main>
+  <div id="game-board"></div>
+  <p id="status"></p>
+  <button onclick="window.location.href='index.html'">Back to Mini Games</button>
+</main>
+
+<script>
+const board = document.getElementById('game-board');
+const status = document.getElementById('status');
+let cards = [];
+let firstCard = null;
+let lockBoard = false;
+let matches = 0;
+
+// Create card values (8 pairs)
+let values = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H'];
+values.sort(()=>Math.random()-0.5);
+
+values.forEach(val=>{
+  let card = document.createElement('div');
+  card.classList.add('card');
+  card.dataset.value = val;
+  card.textContent = '';
+  card.addEventListener('click', flipCard);
+  board.appendChild(card);
+  cards.push(card);
+});
+
+function flipCard(){
+  if(lockBoard || this === firstCard) return;
+  this.classList.add('flipped');
+  this.textContent = this.dataset.value;
+
+  if(!firstCard){
+    firstCard = this;
+    return;
+  }
+
+  // Check match
+  if(this.dataset.value === firstCard.dataset.value){
+    matches +=1;
+    if(matches === 8) status.textContent = "You Won!";
+    firstCard = null;
+  }else{
+    lockBoard = true;
+    setTimeout(()=>{
+      this.classList.remove('flipped');
+      this.textContent = '';
+      firstCard.classList.remove('flipped');
+      firstCard.textContent = '';
+      firstCard = null;
+      lockBoard = false;
+    },800);
+  }
+}
+</script>
+</body>
+</html>
